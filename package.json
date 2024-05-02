@@ -1,7 +1,7 @@
 {
-  "name": "@vercel/ncc",
+  "name": "ncc-pure-js",
   "description": "Simple CLI for compiling a Node.js module into a single file, together with all its dependencies, gcc-style.",
-  "version": "0.0.0-development",
+  "version": "0.0.1",
   "repository": "vercel/ncc",
   "license": "MIT",
   "main": "./dist/ncc/index.js",
@@ -9,14 +9,13 @@
     "ncc": "./dist/ncc/cli.js"
   },
   "files": [
-    "dist"
+    "src"
   ],
   "scripts": {
     "build": "node scripts/build.js",
     "build-test-binary": "cd test/binary && node-gyp rebuild && cp build/Release/hello.node ../integration/hello.node",
     "test": "node --expose-gc --max_old_space_size=4096 node_modules/jest/bin/jest.js",
-    "test-coverage": "node --expose-gc --max_old_space_size=4096 node_modules/jest/bin/jest.js --coverage --globals \"{\\\"coverage\\\":true}\"",
-    "prepublishOnly": "node scripts/build.js --no-cache"
+    "test-coverage": "node --expose-gc --max_old_space_size=4096 node_modules/jest/bin/jest.js --coverage --globals \"{\\\"coverage\\\":true}\""
   },
   "dependencies": {
     "@vercel/webpack-asset-relocator-loader": "^1.7.3",
